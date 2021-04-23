@@ -16,7 +16,7 @@ var map = parseJson(jsonPath)
 
 suspend fun main(args: Array<String>) {
     val bot = Bot(map?.get("qqId") as Long, map?.get("password") as String){
-       fileBasedDeviceInfo()
+       fileBasedDeviceInfo(C:\Users\Administrator\Documents\GitHub\NeoBot\example.json)
        inheritCoroutineContext()
     }.alsoLogin()
     bot.subscribeAlways<GroupMessageEvent> { event -> groupReply(event) }
